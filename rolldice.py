@@ -19,3 +19,20 @@
 # How many sides? 20
 # Here are the results: [18, 19, 6, 8, 13, 6, 6, 6, 18, 12, 20, 10, 14, 8, 14, 17, 12, 15, 20, 17]
 
+import random
+
+random.seed()
+
+results = []
+
+def diceroller(dice, sides):
+    if dice <= 0 or sides <= 1:
+        raise Exception("Error: Invalid dice amount or side count")
+    for i in range(dice):
+        results.append(random.randint(1, sides))
+
+diceCount = int(input("How many dice to roll? "))
+sideCount = int(input("How many sides? "))
+
+diceroller(diceCount, sideCount)
+print(f"Here are the results: {results}")

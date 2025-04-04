@@ -4,3 +4,18 @@
 #The function will continue to prompt the user to enter an integer until a proper integer is entered.
 #The most direct way of doing this would be using a try block, which has not been covered yet. You will need to research this.
 #Write supporting code to call the function, and then display the number that was entered.
+
+variable = 0
+
+def checkinput(prompt, error):
+    print(prompt)
+    variable = input()
+    try:
+        int(variable)
+    except:
+        print(error)
+        checkinput(prompt, error)
+    else:
+        print("Good job! You entered: " + variable)
+
+checkinput("Please enter an integer: ", "Try again!")
